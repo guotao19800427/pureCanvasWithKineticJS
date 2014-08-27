@@ -1,0 +1,65 @@
+@mixin list{
+	width:15%;
+	display:inline-block;
+	cursor:pointer;
+}
+@mixin list-hover{
+	background-color: rgba(0,188,84,0.7);
+	color: #fff;
+}
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    font-size: 75%;
+    ul{
+    	padding:0;
+    	margin:0;
+    	list-style: none;
+    }
+    #bar-chart-wrapper{
+    	width: 410px;
+    	margin-bottom: 2em;
+    	.legends{
+    		text-align:center;
+    		li{
+    			@include list;
+    			span{
+    				display: inline-block;
+    				width:12px;
+    				height:12px;
+    				margin-right:5px;
+    				border-radius: 5px;
+    				position:relative;
+    				top:1px;
+    			}
+    		}
+    		li:hover{
+				@include list-hover;
+			}
+    	}
+    }
+    #line-chart-wrapper{
+    	width: 410px;
+    	.legends{
+    		text-align:center;
+    		li{
+    			@include list;
+    			span{
+    				display: inline-block;
+    				width:20px;
+    				height:4px;
+    				margin-right:5px;
+    				border-radius: 2px;
+    				position:relative;
+    				top:-2px;
+    			}
+    		}
+    		li:hover{
+				@include list-hover;
+			}
+    	}
+    }
+}
+
